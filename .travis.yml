@@ -1,0 +1,10 @@
+addons:
+  code_climate:
+    repo_token: c1df4ba2a8504d19dd6604f4589f244fb7eda3ea1ccb84f889915aebc5180573
+cache: bundler
+language: ruby
+rvm:
+  - 1.9.3
+  - 2.1.0
+script:
+  - bundle exec rspec
