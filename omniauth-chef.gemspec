@@ -29,6 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'webmock'
 
-  spec.add_runtime_dependency 'chef', '~> 11.10.4'
-  spec.add_runtime_dependency 'omniauth-oauth'
+  spec.add_runtime_dependency 'chef',     '~> 11'
+  spec.add_runtime_dependency 'omniauth', '~>  1.2.1'
 end
