@@ -14,6 +14,7 @@ Gem::Specification.new do |spec|
   spec.description = %q{OmniAuth strategy for Chef}
   spec.summary     = %q{OmniAuth strategy for Chef}
   spec.homepage    = 'https://github.com/opscode/oc_actionlog'
+  spec.license     = 'Apache-2.0'
 
   spec.files  = %w(.gitignore omniauth-chef.gemspec Gemfile Rakefile)
   spec.files += Dir.glob 'lib/**/*.rb'
@@ -23,12 +24,11 @@ Gem::Specification.new do |spec|
 
   spec.require_paths = Dir.glob 'lib/**/*.rb'
 
-  spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'rack-test'
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'webmock'
+  spec.add_development_dependency 'bundler',   '~>  1.5'
+  spec.add_development_dependency 'rack-test', '~>  0'
+  spec.add_development_dependency 'rake',      '~> 10'
+  spec.add_development_dependency 'rspec',     '~>  2'
 
   spec.add_runtime_dependency 'chef',     '~> 11'
-  spec.add_runtime_dependency 'omniauth', '~>  1.2.1'
+  spec.add_runtime_dependency 'omniauth', '~>  1.2'
 end
