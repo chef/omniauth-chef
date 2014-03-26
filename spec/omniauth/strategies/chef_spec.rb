@@ -18,5 +18,69 @@
 require 'spec_helper'
 
 describe OmniAuth::Strategies::Chef do
+  subject do
+    OmniAuth::Strategies::Chef.new({})
+  end
 
+  context 'options' do
+    describe 'option :endpoint' do
+      context 'default: https://api.opscode.piab' do
+        it do
+          expect(subject.options.endpoint).to eq('https://api.opscode.piab')
+        end
+      end
+    end
+
+    describe 'option :fields' do
+      context 'default: [:name, :password]' do
+        it { expect(subject.options.fields).to eq([:name, :password]) }
+      end
+    end
+
+    describe 'option :headers' do
+      context 'default: { }' do
+        it { expect(subject.options.headers).to eq({ }) }
+      end
+    end
+
+    describe 'option :organization' do
+      context 'default: nil' do
+        it { expect(subject.options.organization).to eq(nil) }
+      end
+    end
+
+    describe 'option :resource' do
+      context 'default: authenticate_user' do
+        it { expect(subject.options.resource).to eq('authenticate_user') }
+      end
+    end
+
+    describe 'option :source' do
+      context 'default: web' do
+        it { expect(subject.options.source).to eq('web') }
+      end
+    end
+
+    describe 'option :superuser' do
+      context 'default: pivotal' do
+        it { expect(subject.options.superuser).to eq('pivotal') }
+      end
+    end
+
+    describe 'option :key_path' do
+      context 'default: ../../../../config/webui_priv.pem' do
+        it do
+          default_key_path = '../../../../config/webui_priv.pem'
+
+          expect(subject.options.key_path).to eq(default_key_path)
+        end
+      end
+    end
+
+    describe 'option :uid' do
+      context ':name' do
+        it { expect(subject.options.uid).to eq(:name) }
+      end
+    end
+  end
 end
