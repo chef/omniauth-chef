@@ -9,8 +9,8 @@ require 'omniauth-chef/version'
 Gem::Specification.new do |spec|
   spec.name        = 'omniauth-chef'
   spec.version     = OmniAuth::Chef::VERSION
-  spec.authors     = ['Allen Goodman']
-  spec.email       = %q(a@getchef.com)
+  spec.authors     = ['James Casey', 'Allen Goodman']
+  spec.email       = %q(james@getchef.com a@getchef.com)
   spec.description = %q{OmniAuth strategy for Chef}
   spec.summary     = %q{OmniAuth strategy for Chef}
   spec.homepage    = 'https://github.com/opscode/oc_actionlog'
