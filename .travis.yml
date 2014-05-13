@@ -1,4 +1,10 @@
 cache: bundler
+deploy:
+  api_key:
+    secure: YYBSxT6hHT5p5qOu76FioDYsnyZ2X3UPJocfEF26o+SERCnVMMZGmVm953BDeHn8aSTRXqFUmkXIpY2H3qtZn9B1+lOMu+A3uMr0t16EtyWplOEEPQKxQapTnYptMtCxmxRdDs/pSXX75DH6jORsZ2MZ38TQ8tFkixbx8iUusCw=
+  on:
+    tags: true
+  provider: rubygems
 language: ruby
 rvm:
   - 2.1.1
