@@ -59,7 +59,17 @@ module OmniAuth
 
       def authenticated_user
         begin
-          chef.post_rest(resource, username: username, password: password)['user']
+          uname = username
+          # Check if username is email
+          if (uname.include?('@'))
+            users = chef.get_rest(
+              "users?#{{ email: username }.to_query}"
+            )
+            if (users.length > 0)
+              uname = users.first[0]
+            end
+          end
+          chef.post_rest(resource, username: uname, password: password)['user']
         rescue Net::HTTPServerException
 
         end
