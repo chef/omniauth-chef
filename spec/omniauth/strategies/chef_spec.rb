@@ -77,6 +77,15 @@ describe OmniAuth::Strategies::Chef do
       end
     end
 
+    describe 'option :key_data' do
+      context 'default: nil' do
+        it do
+          expect(subject.options.key_data).to eq(nil)
+        end
+      end
+    end
+
+
     describe 'option :uid' do
       context ':name' do
         it { expect(subject.options.uid).to eq(:name) }
