@@ -1,3 +1,7 @@
+branches:
+  only:
+    - master
+
 cache: bundler
 deploy:
   api_key:
