@@ -81,7 +81,7 @@ module OmniAuth
       end
 
       def chef
-        ::Chef::REST.new endpoint, options.superuser, nil, parameters
+        ::Chef::ServerAPI.new endpoint, options.superuser, nil, parameters
       end
 
       def endpoint
