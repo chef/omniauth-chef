@@ -15,6 +15,7 @@
 # limitations under the License.
 
 require 'chef'
+require 'chef/config'
 require 'omniauth'
 
 module OmniAuth
@@ -23,6 +24,7 @@ module OmniAuth
       include OmniAuth::Strategy
 
       option :endpoint,     'https://api.opscode.piab'
+      option :ssl_verify_mode, :verify_peer
       option :fields,       [:name, :password]
       option :headers,      { }
       option :organization, nil
@@ -81,7 +83,8 @@ module OmniAuth
       end
 
       def chef
-        ::Chef::ServerAPI.new endpoint, options.superuser, nil, parameters
+        ::Chef::Config.ssl_verify_mode options.ssl_verify_mode.to_sym
+        ::Chef::ServerAPI.new endpoint, parameters
       end
 
       def endpoint
@@ -101,7 +104,10 @@ module OmniAuth
       end
 
       def parameters
-        { headers: headers, raw_key: key }
+        { headers: headers,
+          client_name: options.superuser,
+          client_key: nil,
+          raw_key: key }
       end
 
       def password
