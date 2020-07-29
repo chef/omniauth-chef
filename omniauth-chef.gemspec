@@ -30,6 +30,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake',        '~> 10'
   spec.add_development_dependency 'rspec',       '~>  2'
 
-  spec.add_runtime_dependency 'chef',     '~> 12'
+  spec.add_runtime_dependency 'chef',     '~> 16'
   spec.add_runtime_dependency 'omniauth', '~>  1.2'
 end
