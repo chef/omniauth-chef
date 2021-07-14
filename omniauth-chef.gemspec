@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'guard-rspec', '~>  4.2'
   spec.add_development_dependency 'rack-test',   '~> 1'
   spec.add_development_dependency 'rake',        '~> 10'
-  spec.add_development_dependency 'rspec',       '~>  2'
+  spec.add_development_dependency 'rspec',       '~> 3'
 
   spec.add_runtime_dependency 'chef',     '~> 16'
   spec.add_runtime_dependency 'omniauth', '~>  1.2'
