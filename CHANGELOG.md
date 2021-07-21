@@ -1,4 +1,4 @@
-# omniauth-chef-oauth2 Changelog
+# omniauth-chef Changelog
 
 <!-- latest_release -->
 <!-- latest_release -->
