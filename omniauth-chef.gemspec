@@ -29,6 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake',        '~> 13'
   spec.add_development_dependency 'rspec',       '~> 3'
 
-  spec.add_runtime_dependency 'chef',     '~> 16'
-  spec.add_runtime_dependency 'omniauth', '~> 2.0' # required for CVE-2015-9284
+  spec.add_runtime_dependency 'chef',     '~> 17'
+  spec.add_runtime_dependency 'omniauth', '~> 2.0', '>= 2.0.4' # required for CVE-2015-9284
 end
