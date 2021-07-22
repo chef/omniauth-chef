@@ -1,9 +1,14 @@
 # omniauth-chef
 
+ An OmniAuth strategy for Chef Infra
 
-    $ bundle exec rake
+## Installation
 
-# License
+```shell
+bundle exec rake
+```
+
+## License
 
 |                      |                                          |
 |:---------------------|:-----------------------------------------|
