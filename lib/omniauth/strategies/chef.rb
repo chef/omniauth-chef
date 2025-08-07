@@ -111,7 +111,7 @@ module OmniAuth
       end
 
       def password
-        options.password ? options.password : request[:password]
+        options.password ? options.password : request.params['password']
       end
 
       def resource
@@ -119,7 +119,7 @@ module OmniAuth
       end
 
       def username
-        options.username ? options.username : request[:username]
+        options.username ? options.username : request.params['username']
       end
     end
   end
