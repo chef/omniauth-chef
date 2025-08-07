@@ -42,16 +42,20 @@ module OmniAuth
       end
 
       uid do
-        @user['username']
+        @user.is_a?(Hash) ? @user['username'] : nil
       end
 
       info do
-        {
-          email:      @user['email'],
-          first_name: @user['first_name'],
-          last_name:  @user['last_name'],
-          name:       @user['display_name']
-        }
+        if @user.is_a?(Hash)
+          {
+            email:      @user['email'],
+            first_name: @user['first_name'],
+            last_name:  @user['last_name'],
+            name:       @user['display_name']
+          }
+        else
+          {}
+        end
       end
 
       extra do
